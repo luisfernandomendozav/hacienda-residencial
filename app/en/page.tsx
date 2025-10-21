@@ -71,6 +71,17 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
+      {/* Language Switcher */}
+      <div className="fixed top-4 right-4 z-40 flex gap-2">
+        <a
+          href="/"
+          className="bg-white/90 hover:bg-white px-4 py-2 rounded-lg shadow-lg transition-all flex items-center gap-2"
+        >
+          <span className="text-2xl">🇲🇽</span>
+          <span className="text-sm font-medium">ES</span>
+        </a>
+      </div>
+
       {/* Hero Section */}
       <section className="relative h-screen">
         <Image
