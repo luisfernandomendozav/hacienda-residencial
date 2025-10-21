@@ -51,6 +51,19 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
+      {/* YouTube Shorts Video Section */}
+      <section className="relative h-screen bg-black flex items-center justify-center">
+        <div className="w-full h-full max-w-[450px] mx-auto">
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/cce6303Pe1I"
+            title="Hacienda Residencial Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="relative h-screen">
         <Image
