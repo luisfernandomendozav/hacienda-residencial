@@ -211,7 +211,7 @@ export default function Home() {
       {/* Video Modal */}
       {isVideoModalOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
+          className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center"
           onClick={() => setIsVideoModalOpen(false)}
         >
           <button
@@ -227,7 +227,7 @@ export default function Home() {
           >
             <iframe
               className="w-full h-full rounded-lg"
-              src="https://www.youtube.com/embed/cce6303Pe1I"
+              src="https://www.youtube.com/embed/cce6303Pe1I?autoplay=1&mute=1"
               title="Hacienda Residencial Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
