@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const images = [
   "/images/7C0A6106-Editar-1.jpg",
@@ -49,6 +49,25 @@ export default function Home() {
   const prevImage = () => {
     setModalImageIndex((prev) => (prev - 1 + images.length) % images.length);
   };
+
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (event.origin !== "https://www.youtube.com") return;
+
+      try {
+        const data = JSON.parse(event.data);
+        if (data.event === "onStateChange" && data.info === 0) {
+          // Video ended (state 0)
+          setIsVideoModalOpen(false);
+        }
+      } catch (e) {
+        // Ignore parse errors
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, []);
 
   return (
     <main className="min-h-screen">
@@ -227,7 +246,7 @@ export default function Home() {
           >
             <iframe
               className="w-full h-full rounded-lg"
-              src="https://www.youtube.com/embed/cce6303Pe1I?autoplay=1&mute=1&vq=hd720"
+              src="https://www.youtube.com/embed/cce6303Pe1I?autoplay=1&vq=hd720&enablejsapi=1"
               title="Hacienda Residencial Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
