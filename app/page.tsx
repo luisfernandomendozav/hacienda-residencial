@@ -31,6 +31,7 @@ export default function Home() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImageIndex, setModalImageIndex] = useState(0);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(true);
 
   const openModal = (index: number) => {
     setModalImageIndex(index);
@@ -51,19 +52,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      {/* YouTube Shorts Video Section */}
-      <section className="relative h-screen bg-black flex items-center justify-center">
-        <div className="w-full h-full max-w-[450px] mx-auto">
-          <iframe
-            className="w-full h-full"
-            src="https://www.youtube.com/embed/cce6303Pe1I"
-            title="Hacienda Residencial Video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
-      </section>
-
       {/* Hero Section */}
       <section className="relative h-screen">
         <Image
@@ -219,6 +207,34 @@ export default function Home() {
           <p className="text-sm opacity-75 mt-2">Casa en Venta - Propiedad de Lujo</p>
         </div>
       </footer>
+
+      {/* Video Modal */}
+      {isVideoModalOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
+          onClick={() => setIsVideoModalOpen(false)}
+        >
+          <button
+            onClick={() => setIsVideoModalOpen(false)}
+            className="absolute top-4 right-4 text-white text-4xl hover:opacity-75 transition-opacity z-10"
+          >
+            ×
+          </button>
+
+          <div
+            className="relative w-full h-full max-w-[450px] max-h-[80vh] mx-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <iframe
+              className="w-full h-full rounded-lg"
+              src="https://www.youtube.com/embed/cce6303Pe1I"
+              title="Hacienda Residencial Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
 
       {/* Image Modal */}
       {isModalOpen && (
