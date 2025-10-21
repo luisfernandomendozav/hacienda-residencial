@@ -94,7 +94,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/30" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
           <h1 className="text-5xl md:text-7xl font-light mb-4">🌿 House for Sale</h1>
-          <h2 className="text-3xl md:text-4xl font-light mb-8">Hacienda Residencial</h2>
+          <h2 className="text-3xl md:text-4xl font-light mb-8">Hacienda Residencial, Hermosillo, Sonora, México</h2>
           <p className="text-xl md:text-2xl max-w-3xl font-light">
             A unique residence that combines luxury, comfort, and harmony with nature under the concept of Japanese Zen style
           </p>
