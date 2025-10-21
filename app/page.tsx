@@ -227,7 +227,7 @@ export default function Home() {
           >
             <iframe
               className="w-full h-full rounded-lg"
-              src="https://www.youtube.com/embed/cce6303Pe1I?autoplay=1&mute=1"
+              src="https://www.youtube.com/embed/cce6303Pe1I?autoplay=1&mute=1&vq=hd720"
               title="Hacienda Residencial Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
